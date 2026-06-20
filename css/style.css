@@ -18,12 +18,13 @@ body {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto 1fr 1fr 1fr;
     grid-gap: 20px;
+    width: 100%;
 }
 .header {    
     display: flex;
     margin: 0;
     padding: 20px;
-    height: 60%;
+    max-height: 90px;
     background-color: rgba(255, 255, 255, 0.65);
     grid-column-start: 1;
     grid-column-end: 5;
@@ -32,12 +33,6 @@ body {
     align-items: center;
     gap: 0;
 }
-.logo {
-    width: 10px;
-    height: 10px;
-    object-fit: cover;
-    margin: 20px;
-}
 .button1 button{
     margin: 3px;
     padding: 10px 20px;
@@ -45,7 +40,7 @@ body {
     border-radius: 24px;
     background-color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
-    transition: background-color 0.3s ease transform 0.5s ease;
+    transition: background-color 0.3s ease, transform 0.35s ease, box-shadow 0.35s ease;
 }
 .button1 button:hover{
     background-color: rgba(243, 243, 243, 0.5);
@@ -54,8 +49,6 @@ body {
 }
 .name-card {
     display: flex;
-    min-height: min-content;
-    max-width: max-content;
     padding: 20px;
     grid-column-start: 1;
     grid-column-end: 2;
@@ -65,7 +58,6 @@ body {
     gap: 24px;
 }
 .name-card > div {
-    min-height: auto;
     padding: 14px;
     border-radius: 24px;
     background-color: rgba(254, 245, 245, 0.6);
@@ -114,7 +106,7 @@ body {
     grid-column-end: 5;
     grid-row-start: 4;
     grid-row-end: 5;
-    background-color: rgba(255, 255, 255, 0.65);
-    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 0;
     text-align: center;
 }
