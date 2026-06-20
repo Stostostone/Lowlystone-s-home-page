@@ -24,14 +24,16 @@ body {
     display: flex;
     margin: 0;
     padding: 20px;
-    max-height: 90px;
+    min-width: 100%;
     background-color: rgba(255, 255, 255, 0.65);
-    grid-column-start: 1;
-    grid-column-end: 5;
+    grid-column: 1 / -1;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     gap: 0;
+}
+.logo {
+    margin-right: auto;
 }
 .button1 button{
     margin: 3px;
@@ -55,7 +57,8 @@ body {
     grid-row-start: 2;
     grid-row-end: 4;
     flex-direction: column;
-    gap: 24px;
+    row-gap: 24px;
+    column-gap: auto;
 }
 .name-card > div {
     padding: 14px;
@@ -103,11 +106,34 @@ body {
 }
 
 .footer  {
-    grid-column-start: 1;
-    grid-column-end: 5;
+    grid-column: 1 /-1;
     grid-row-start: 4;
     grid-row-end: 5;
     background-color: rgba(255, 255, 255, 0.3);
     padding: 0;
     text-align: center;
+}
+@media (max-width: 768px) {
+    .main-layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        width: 100%;
+    }
+    .header, .name-card, .main, .footer {
+        grid-row: auto;
+        grid-column: 1 / -1;
+    }
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+    .main {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .main > div {
+        flex-basis: 100%;
+        width: 100%;
+    }
 }
