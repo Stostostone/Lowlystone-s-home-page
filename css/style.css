@@ -15,8 +15,8 @@ body {
 }
 .main-layout {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: auto auto auto auto;
     grid-gap: 0;
     width: 100%;
 }
@@ -36,6 +36,7 @@ body {
 }
 .logo {
     margin-right: auto;
+    animation: fadeIn 0.4s ease forwards;
 }
 .button1 button{
     margin: 3px;
@@ -47,16 +48,22 @@ body {
     transition: background-color 0.3s ease, transform 0.35s ease, box-shadow 0.35s ease, padding-right 0.3s ease;
     position: relative;
     padding-right: 1.3rem; 
+    animation: fadeInUp 0.6s ease var(--delay, 0s) backwards;
 }
+.menu-button{--delay: 0s}
+.tools-button{--delay: 0.2s}
+.about-button{--delay: 0.4s}
+.setting-button{--delay: 0.6s}
+
 .button1 button::after{
     top: 50%;
     transform: translateY(-50%);
     right: 0.8rem;
     content: '→';
-    color: rgba(202, 202, 202, 0.5);
+    color: rgba(126, 111, 255, 0.8);
     opacity: 0;
     position: absolute;
-    transition: right 0.5s ease opacity 0.3s ease;
+    transition: right 0.5s ease, opacity 0.3s ease;
 }
 .button1 button:hover::after{
     opacity: 1;
@@ -85,7 +92,7 @@ body {
     border: 1px solid rgba(255, 244, 244, 0.65);    
     box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
     text-align: left;
-    transition: background-color 0.5s ease, transform 0.3s ease, box-shadow 0.5s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     backdrop-filter: blur(5px);
 }
@@ -94,7 +101,13 @@ body {
     align-items: flex-start;
     flex-direction: column;
     justify-content: flex-start;
+    overflow: hidden;
+    animation: fadeInUp 0.6s ease backwards;
 }
+.name-card .name { animation-delay: 0s; }
+.name-card .information { animation-delay: 0.2s; }
+.name-card .contact { animation-delay: 0.4s; }
+
 .name img {
     display: block;
     width: 100%;
@@ -129,7 +142,7 @@ body {
 }
 .name-card > div:hover {
     background-color: rgba(254, 245, 245, 0.7);
-    transform: scale(1.05) translateY(-3px);
+    transform: scale(1.03) translateY(-3px);
     box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
 }
 .main {
@@ -148,18 +161,35 @@ body {
 }
 .main > div {
     flex: 1 1 300px;
-    padding: 24px 24px 24px 24px;
     border-radius: 24px;
     background: rgba(254, 245, 245, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.65);
     box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
-    transition: background-color 0.5s ease, transform 0.5s ease, box-shadow 0.5s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     min-width: 0;
     backdrop-filter: blur(5px);
+    animation: fadeInUp 0.6s ease var(--delay, 0s) backwards;
+}
+.card1{--delay: 0s}
+.card2{--delay: 0.2s}
+.card3{--delay: 0.4s}
+.card4{--delay: 0.6s}
+
+.card1-content{
+    padding: 24px;
+}
+.card2-content{
+    padding: 24px
+}
+.card3-content{
+    padding: 24px;
+}
+.card4-content{
+    padding: 24px;
 }
 .main > div:hover {
     background: rgba(254, 245, 245, 0.7);
-    transform: scale(1.05) translateY(-3px);
+    transform: scale(1.03) translateY(-3px);
     box-shadow: 0 20px 50px rgba(15,23, 42, 0.08);
 }
 
@@ -195,3 +225,22 @@ body {
         width: 100%;
     }
 }
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
