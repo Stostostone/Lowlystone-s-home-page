@@ -1,18 +1,22 @@
+/* ==================== Font Face ==================== */
 @font-face{
     font-family: outfit;
     src: url("../assets/fonts/Outfit-VariableFont_wght.ttf") format("truetype-variations");
 }
 
+/* ====================Global Styles==================== */
 * {
     box-sizing: border-box;
     font-family: outfit;
 }
+/* ===================Page Background===================== */
 body {
     margin: 0;
     padding: 0;
     background: url(../assets/background/background1.jpeg) no-repeat center center fixed;
     background-size: cover;
 }
+/* ====================Main Grid Layout==================== */
 .main-layout {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -20,6 +24,7 @@ body {
     grid-gap: 0;
     width: 100%;
 }
+/* ====================Header Styles==================== */
 .header {    
     display: flex;
     margin: 0;
@@ -34,10 +39,12 @@ body {
     box-shadow: 0 0 20px rgba(15, 23, 42, 0.1);
     backdrop-filter: blur(5px);
 }
+/* ====================Header Logo Styles==================== */
 .logo {
     margin-right: auto;
     animation: fadeIn 0.4s ease forwards;
 }
+/* ====================Header Button Styles==================== */
 .button1 button{
     margin: 3px;
     padding: 10px 20px;
@@ -75,6 +82,7 @@ body {
     box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
     padding-right: 2rem;
 }
+/* ====================Profile Cards Styles==================== */
 .name-card {
     display: flex;
     padding: 20px;
@@ -107,7 +115,7 @@ body {
 .name-card .name { animation-delay: 0s; }
 .name-card .information { animation-delay: 0.2s; }
 .name-card .contact { animation-delay: 0.4s; }
-
+/* ===================Profile Image Styles===================== */
 .name img {
     display: block;
     width: 100%;
@@ -117,6 +125,7 @@ body {
     object-fit: cover;
     object-position: top center;
 }
+/* ===================Profile Content Styles===================== */
 .name-content {
     padding: 16px;
 }
@@ -126,6 +135,7 @@ body {
 .contact-content {
     padding: 16px;
 }
+/* =====================Profile Card Hover Effect=================== */
 .name-card > div::before {
     content: '';
     position: absolute;
@@ -145,6 +155,7 @@ body {
     transform: scale(1.03) translateY(-3px);
     box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
 }
+/* =====================Main Cards Layout=================== */
 .main {
     display: flex;
     flex-wrap: wrap;
@@ -159,6 +170,7 @@ body {
     row-gap: 24px;
     column-gap: 24px;
 }
+/* ====================Main Cards Styles==================== */
 .main > div {
     flex: 1 1 300px;
     border-radius: 24px;
@@ -170,29 +182,22 @@ body {
     backdrop-filter: blur(5px);
     animation: fadeInUp 0.6s ease var(--delay, 0s) backwards;
 }
+
 .card1{--delay: 0s}
 .card2{--delay: 0.2s}
 .card3{--delay: 0.4s}
 .card4{--delay: 0.6s}
 
-.card1-content{
+.card-content{
     padding: 24px;
 }
-.card2-content{
-    padding: 24px
-}
-.card3-content{
-    padding: 24px;
-}
-.card4-content{
-    padding: 24px;
-}
+
 .main > div:hover {
     background: rgba(254, 245, 245, 0.7);
     transform: scale(1.03) translateY(-3px);
     box-shadow: 0 20px 50px rgba(15,23, 42, 0.08);
 }
-
+/* ===================Footer Styles===================== */
 .footer  {
     grid-column: 1 /-1;
     grid-row-start: 4;
@@ -201,6 +206,7 @@ body {
     padding: 0;
     text-align: center;
 }
+/* =====================Responsive Styles=================== */
 @media (max-width: 768px) {
     .main-layout {
         grid-template-columns: 1fr;
@@ -225,6 +231,7 @@ body {
         width: 100%;
     }
 }
+/* ====================Animation Styles==================== */
 @keyframes fadeInUp {
     from {
         opacity: 0;
