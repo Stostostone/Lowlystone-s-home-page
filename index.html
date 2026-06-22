@@ -15,12 +15,22 @@
             <div class="logo">
                 <h1>Lowlystone's home</h1>
             </div>
-            <div class="button1">
-                <button class="menu-button">Menu</button>
-                <button class="tools-button">Tools</button>
-                <button class="about-button">About</button>
-                <button class="setting-button">setting</button>
-            </div>
+                <div class="button-container">
+                    <button class="menu-button">Menu</button>
+                </div>
+                <div class="button-container">
+                    <button class="tools-button">Tools</button>
+                </div>
+                <div class="button-container">
+                    <button class="about-button">About</button>
+                </div>
+                <div class="button-container">
+                <button class="setting-button" onclick="setting()">Setting</button>
+                <div class="setting-card">
+                    <h3>Setting</h3>
+                    <p>Here you can adjust your preferences.</p>
+                </div>
+                </div>
         </div>
         <!--================================Profile Cards================================-->
         <div class="name-card">
@@ -91,6 +101,6 @@
         </div>
     </div>
 
-
+    <script src="js/main.js"></script>
 </body>
 </html>
