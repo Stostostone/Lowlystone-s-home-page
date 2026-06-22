@@ -21,7 +21,7 @@ function setting() {
         settingCard.classList.add("is-open");
     }
 }
-document.querySelector('.setting-button').addEventListener('click', setting);
+document.querySelector('.setting-toggle-button').addEventListener('click', setting);
 function showPage(pageClass) {
     const pages = document.querySelectorAll(".page-section");
     const targetPage = document.querySelector(pageClass);

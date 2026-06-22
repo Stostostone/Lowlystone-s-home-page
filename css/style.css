@@ -70,6 +70,13 @@ body {
     animation: fadeIn 0.4s ease forwards;
 }
 /* ====================Header Button Styles==================== */
+.nav-button {
+    display: flex;
+    gap: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
 .button-container{
     position: relative;
 }
@@ -110,13 +117,17 @@ body {
     box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
     padding-right: 2rem;
 }
+.button-container .setting-button {
+    background-color: rgba(255, 255, 255, 0.5);
+    animation: fadeInDown 0.1s ease forwards;
+}
 /* ====================Seeting Card Styles==================== */
 .setting-card{
     display: none;
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: rgba(254, 245, 245, 0.6);
+    background-color: rgba(254, 245, 245, 0.8);
     backdrop-filter: blur(25px);
     border: 1px solid rgba(255, 244, 244, 0.65);
     border-radius: 24px;
@@ -295,6 +306,12 @@ body {
     .header {
         flex-direction: column;
         align-items: center;
+    }
+    .nav-button {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
     }
     .main {
         flex-direction: column;
