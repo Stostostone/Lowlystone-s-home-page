@@ -356,6 +356,11 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: flex-between;
+    background-color: rgba(123, 62, 81, 0.129);
+    border: 1px solid rgba(120, 0, 34, 0.2);
+}
+.time-card:hover {
+    background-color: rgba(77, 0, 24, 0.1);
 }
 
 .clock, .time-suggetion {
@@ -363,7 +368,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    background-color: rgba(77, 0, 24, 0.259);
+    background-color: rgba(77, 0, 24, 0.141);
     border-radius: 24px;
     max-width: max-content;
     max-height: max-content;
@@ -543,7 +548,7 @@ body {
     grid-column: 1 /-1;
     grid-row-start: 4;
     grid-row-end: 5;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0);
     padding: 0;
     text-align: center;
     animation: fadeIn 2s ease backwards;

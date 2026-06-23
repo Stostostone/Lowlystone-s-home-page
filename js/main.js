@@ -92,12 +92,12 @@ function weather() {
         .then(r => r.json())
         .then(data => {
             const desc = data.current_condition[0].weatherDesc[0].value;
-            let imgSrc = 'assets/icons/sunny.png';
-            if (desc.includes('晴')) imgSrc = 'assets/icons/sunny.png';
-            else if (desc.includes('云') || desc.includes('阴')) imgSrc = 'assets/icons/cloudy.png';
-            else if (desc.includes('雨')) imgSrc = 'assets/icons/rain.png';
-            else if (desc.includes('雪')) imgSrc = 'assets/icons/snowy.png';
-            else if (desc.includes('雾') || desc.includes('霾')) imgSrc = 'assets/icons/foggy.png';
+            let imgSrc = '../assets/icons/sunny.png';
+            if (desc.includes('晴')) imgSrc = '../assets/icons/sunny.png';
+            else if (desc.includes('Partly cloudy') || desc.includes('阴')) imgSrc = '../assets/icons/cloudy.png';
+            else if (desc.includes('雨')) imgSrc = '../assets/icons/rain.png';
+            else if (desc.includes('雪')) imgSrc = '../assets/icons/snowy.png';
+            else if (desc.includes('雾') || desc.includes('霾')) imgSrc = '../assets/icons/foggy.png';
             document.querySelector('.weather-img').src = imgSrc;
             // 如果要显示文字
             const temp = data.current_condition[0].temp_C;
