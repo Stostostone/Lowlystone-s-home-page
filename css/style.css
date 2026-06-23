@@ -662,10 +662,12 @@ body {
     }
 
     .menu-row {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         gap: 12px;
         width: min(100%, calc(100%));
         padding: 12px 10px 10px 10px;
+        align-items: stretch;
     }
 
     .menu-container {
