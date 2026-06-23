@@ -88,21 +88,21 @@ function suggestion() {
 }
 setInterval(suggestion, 1000);
 function weather() {
-    // Simulate a weather update
     fetch('https://wttr.in/永康?format=j1&lang=zh')
-  .then(r => r.json())
-  .then(data => {
-    const desc = data.current_condition[0].weatherDesc[0].value;
-    const icon = data.current_condition[0].weatherIconUrl[0].value;
-    // 或者自己映射
-    let imgSrc = 'img/default.jpg';
-    if (desc.includes('晴')) imgSrc = 'img/sunny.jpg';
-    else if (desc.includes('云') || desc.includes('阴')) imgSrc = 'img/cloudy.jpg';
-    else if (desc.includes('雨')) imgSrc = 'img/rainy.jpg';
-    else if (desc.includes('雪')) imgSrc = 'img/snowy.jpg';
-    else if (desc.includes('雾') || desc.includes('霾')) imgSrc = 'img/foggy.jpg';
-    document.querySelector('.weather-icon').src = imgSrc;
-  });
-    document.getElementById("weather").textContent = `Weather: ${weather}, ${temperature}°F`;
+        .then(r => r.json())
+        .then(data => {
+            const desc = data.current_condition[0].weatherDesc[0].value;
+            let imgSrc = 'assets/icons/sunny.png';
+            if (desc.includes('晴')) imgSrc = 'assets/icons/sunny.png';
+            else if (desc.includes('云') || desc.includes('阴')) imgSrc = 'assets/icons/cloudy.png';
+            else if (desc.includes('雨')) imgSrc = 'assets/icons/rain.png';
+            else if (desc.includes('雪')) imgSrc = 'assets/icons/snowy.png';
+            else if (desc.includes('雾') || desc.includes('霾')) imgSrc = 'assets/icons/foggy.png';
+            document.querySelector('.weather-img').src = imgSrc;
+            // 如果要显示文字
+            const temp = data.current_condition[0].temp_C;
+            document.getElementById('weather').textContent = `${desc} ${temp}°C`;
+        });
 }
-setInterval(weather, 1000);
+weather();
+setInterval(weather, 600000); // 每10分钟更新一次
