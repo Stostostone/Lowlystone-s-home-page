@@ -95,7 +95,7 @@ function weather() {
             let imgSrc = '../assets/icons/sunny.png';
             if (desc.includes('晴')) imgSrc = '../assets/icons/sunny.png';
             else if (desc.includes('Partly cloudy') || desc.includes('阴')) imgSrc = '../assets/icons/cloudy.png';
-            else if (desc.includes('雨')) imgSrc = '../assets/icons/rain.png';
+            else if (desc.includes('雨')) imgSrc = '../assets/icons/rainy.png';
             else if (desc.includes('雪')) imgSrc = '../assets/icons/snowy.png';
             else if (desc.includes('雾') || desc.includes('霾')) imgSrc = '../assets/icons/foggy.png';
             document.querySelector('.weather-img').src = imgSrc;
