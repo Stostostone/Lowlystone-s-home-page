@@ -8,6 +8,10 @@
 * {
     box-sizing: border-box;
     font-family: outfit;
+    color: rgba(120, 21, 47, 0.871);
+}
+h1, h2, h3, p {
+    margin:0px;
 }
 
 /* ===================Page Background===================== */
@@ -198,27 +202,81 @@ body {
     border-radius: 24px;
     box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
     position: relative;
-    transition: transform 0.3s ease ,background-color 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease;
     animation: fadeInUp 0.6s ease backwards;
     text-align: left;
     flex-direction: column;
+    gap: 7px;
 }
+.card p,
+.card h2,
+.card h3 {
+    margin: 7px;
+}
+
 .card:hover {
     background-color: rgba(254, 245, 245, 0.4);
     transform: translateY(-3px) scale(1.01);
     box-shadow: 0 20px 50px rgba(15, 23, 42, 0.16);
 }
+
+/* ====================Link Button Styles==================== */
+.nav-link-button {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.link-button {
+    border: 0;
+    border-radius: 50%;
+    background-color: rgba(254, 245, 245, 0.5);
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.link-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.link-button:hover {
+    background-color: rgba(254, 245, 245, 0.3);
+    transform: scale(1.1) translateY(-1px);
+}
+
+/* ====================Lable Cards Styles==================== */
+.lable-card {
+    font-size: 12px;
+    max-width: max-content;
+    max-height: max-content;
+    display: block;
+    padding: 5px 10px 5px 10px;
+    background-color: rgba(254, 245, 245, 0.5);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 244, 244, 0.65);
+    border-radius: 10px;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+    gap: 7px;
+}
+
 /* ====================menu rows Styles==================== */
 .menu-row {
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
     gap: 14px;
-     width: min(900px, calc(100% - 50px));
+    width: min(900px, calc(100% - 50px));
 }
+
 /* ====================Menu display Picture Styles==================== */
 .menu-big-picture {
     transition: fadeIn 0.6s ease backwards;
 }
+
 .menu-big-picture img {
     width: 100%;
     height: 100%;
@@ -238,6 +296,23 @@ body {
     grid-column: 1 / 9;
     grid-row: 1 / 2;
     animation-delay: 0ms;
+    position: relative;
+}
+
+.welcome-card h2 {
+    position: relative;
+}
+
+.welcome-card h2::before {
+    border: 0;
+    content: "";
+    position: absolute;
+    width: 75%;
+    right: 0;
+    bottom: 50%;
+    background: linear-gradient(to right, transparent, rgba(255, 163, 186, 0.5), transparent);
+    height: 2px;
+    z-index: -1;
 }
 
 .hello-card {
@@ -245,17 +320,22 @@ body {
     grid-row: 1 / 2;
     animation-delay: 0.1s;
 }
+.nav-link-button p {
+    margin-right: auto;
+}
 
-.music-card {
+.time-card {
     grid-column: 1 / 13;
     animation-delay: 0.2s;
 }
+
 /* ====================menu Cards Styles==================== */
 .menu-container {
     grid-template-rows: 1fr 1fr;
     gap: 14px;
     margin: 14px 0;
 }
+
 .todo-card {
     grid-column: 1 / 4;
     grid-row: 1 / -1;
@@ -436,12 +516,31 @@ body {
 
 /* =====================Responsive Styles=================== */
 @media (max-width: 768px) {
+
+    /* ====================AI generated==================== */
+    body {
+        background-attachment: scroll;
+    }
+
+    .main-layout {
+        grid-template-columns: 1fr;
+    }
+
+    /* ====================AI generated==================== */
     .about-layout {
         grid-template-columns: 1fr;
         grid-template-rows: auto auto auto auto;
         width: 100%;
     }
 
+    /* ====================AI generated==================== */
+    .menu-layout,
+    .tools-layout {
+        width: 100%;
+        padding: 0 12px 24px;
+    }
+
+    /* ====================AI generated==================== */
     .header,
     .name-card,
     .main,
@@ -450,33 +549,119 @@ body {
         grid-column: 1 / -1;
     }
 
+    /* ====================AI generated==================== */
     .header {
         flex-direction: column;
         align-items: center;
+        gap: 12px;
+        padding: 16px 12px;
     }
 
+    .logo {
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .logo h1 {
+        margin: 0;
+        font-size: clamp(1.6rem, 6vw, 2rem);
+    }
+
+    /* ====================AI generated==================== */
     .nav-button {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: flex-end;
+        justify-content: center;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .button-container {
+        width: calc(50% - 8px);
+        min-width: 140px;
+    }
+
+    .button-container button {
+        width: 100%;
+    }
+
+    /* ====================AI generated==================== */
+    .setting-card {
+        width: 100%;
     }
 
     .main {
         flex-direction: column;
         align-items: center;
         width: 100%;
+        padding: 12px;
+        row-gap: 16px;
+        column-gap: 16px;
     }
 
     .main>div {
-        flex-basis: 100%;
+        flex-basis: auto;
         width: 100%;
+    }
+
+    /* ====================AI generated==================== */
+
+    .name-card {
+        padding: 12px;
+        row-gap: 16px;
+    }
+
+    .name img {
+        aspect-ratio: 16 / 7;
+    }
+
+    .card-content,
+    .name-content,
+    .information-content,
+    .contact-content {
+        padding: 18px;
+    }
+
+    .menu-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        width: min(100%, calc(100% - 24px));
+    }
+
+    .menu-container {
+        grid-template-rows: auto;
+    }
+
+
+
+    .menu-big-picture img {
+        height: 220px;
+    }
+
+    .tools-layout .row {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: min(100%, 420px);
     }
 
     .welcome-card,
     .hello-card,
-    .music-card {
+    .music-card,
+    .todo-card,
+    .learning-card,
+    .github-card {
         grid-column: 1 / -1;
+        grid-row: auto;
+    }
+
+    .todo-card {
+        height: auto;
+    }
+
+    .footer {
+        padding: 8px 12px;
     }
 }
 

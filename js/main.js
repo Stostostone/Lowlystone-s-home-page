@@ -48,3 +48,20 @@ document.querySelector(".tools-button").addEventListener("click", () => {
 document.querySelector(".about-button").addEventListener("click", () => {
     showPage(".about-page");
 });
+
+function github() {
+    window.open("https://github.com/Stostostone", "_blank");
+}
+document.querySelector(".github-link").addEventListener("click", github);
+function email() {
+    window.open("mailto:3587959529@qq.com", "_blank");
+}
+document.querySelector(".email-link").addEventListener("click", email);
+function bilibili() {
+    window.open("https://space.bilibili.com/440117109", "_blank");
+}
+document.querySelector(".bilibili-link").addEventListener("click", bilibili);
+function steam() {
+    window.open("https://steamcommunity.com/profiles/76561198990417401/", "_blank");
+}
+document.querySelector(".steam-link").addEventListener("click", steam);
