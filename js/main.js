@@ -73,3 +73,36 @@ function updateTime() {
     document.getElementById("year").textContent = yearString;
 }
 setInterval(updateTime, 1000);
+function suggestion() {
+    const now = new Date();
+    const hour = now.getHours();
+    let suggestion = "";
+    if (hour >= 6 && hour < 12) {
+        suggestion = "Have a nice day!";
+    } else if (hour >= 12 && hour < 18) {
+        suggestion = "Good afternoon!";
+    } else {
+        suggestion = "It's time to go to bad ";
+    }
+    document.getElementById("time-suggestion").textContent = suggestion;
+}
+setInterval(suggestion, 1000);
+function weather() {
+    // Simulate a weather update
+    fetch('https://wttr.in/永康?format=j1&lang=zh')
+  .then(r => r.json())
+  .then(data => {
+    const desc = data.current_condition[0].weatherDesc[0].value;
+    const icon = data.current_condition[0].weatherIconUrl[0].value;
+    // 或者自己映射
+    let imgSrc = 'img/default.jpg';
+    if (desc.includes('晴')) imgSrc = 'img/sunny.jpg';
+    else if (desc.includes('云') || desc.includes('阴')) imgSrc = 'img/cloudy.jpg';
+    else if (desc.includes('雨')) imgSrc = 'img/rainy.jpg';
+    else if (desc.includes('雪')) imgSrc = 'img/snowy.jpg';
+    else if (desc.includes('雾') || desc.includes('霾')) imgSrc = 'img/foggy.jpg';
+    document.querySelector('.weather-icon').src = imgSrc;
+  });
+    document.getElementById("weather").textContent = `Weather: ${weather}, ${temperature}°F`;
+}
+setInterval(weather, 1000);
