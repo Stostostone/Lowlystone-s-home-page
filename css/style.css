@@ -191,28 +191,29 @@ body {
 /* ====================Cards Styles==================== */
 .card {
     display: flex;
-    padding: 20px;
+    padding: 7px 20px 7px 20px;
     background-color: rgba(254, 245, 245, 0.5);
     backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 244, 244, 0.65);
     border-radius: 24px;
     box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
     position: relative;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease ,background-color 0.3s ease;
     animation: fadeInUp 0.6s ease backwards;
     text-align: left;
     flex-direction: column;
 }
 .card:hover {
-    background-color: rgba(254, 245, 245, 0.8);
+    background-color: rgba(254, 245, 245, 0.4);
     transform: translateY(-3px) scale(1.01);
     box-shadow: 0 20px 50px rgba(15, 23, 42, 0.16);
 }
 /* ====================menu rows Styles==================== */
-.row {
+.menu-row {
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
     gap: 14px;
+     width: min(900px, calc(100% - 50px));
 }
 /* ====================Menu display Picture Styles==================== */
 .menu-big-picture {
@@ -236,37 +237,42 @@ body {
 .welcome-card {
     grid-column: 1 / 9;
     grid-row: 1 / 2;
+    animation-delay: 0ms;
 }
 
 .hello-card {
     grid-column: 9/ 13;
     grid-row: 1 / 2;
+    animation-delay: 0.1s;
 }
 
 .music-card {
     grid-column: 1 / 13;
+    animation-delay: 0.2s;
 }
 /* ====================menu Cards Styles==================== */
 .menu-container {
     grid-template-rows: 1fr 1fr;
     gap: 14px;
     margin: 14px 0;
-
 }
 .todo-card {
     grid-column: 1 / 4;
     grid-row: 1 / -1;
     height: 300px;
+    animation-delay: 0.3s;
 }
 
 .learning-card {
     grid-column: 4 / 13;
     grid-row: 1 / 2;
+    animation-delay: 0.4s;
 }
 
 .github-card {
     grid-column: 4 / 13;
     grid-row: 2 / 3;
+    animation-delay: 0.5s;
 }
 
 
@@ -359,7 +365,7 @@ body {
 }
 
 .name-card>div:hover {
-    background-color: rgba(254, 245, 245, 0.7);
+    background-color: rgba(254, 245, 245, 0.4);
     transform: scale(1.03) translateY(-3px);
     box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
 }
@@ -413,7 +419,7 @@ body {
 }
 
 .main>div:hover {
-    background: rgba(254, 245, 245, 0.7);
+    background-color: rgba(254, 245, 245, 0.4);
     transform: scale(1.03) translateY(-3px);
     box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
 }
