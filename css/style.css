@@ -1,5 +1,5 @@
 /* ==================== Font Face ==================== */
-@font-face{
+@font-face {
     font-family: outfit;
     src: url("../assets/fonts/Outfit-VariableFont_wght.ttf") format("truetype-variations");
 }
@@ -9,6 +9,7 @@
     box-sizing: border-box;
     font-family: outfit;
 }
+
 /* ===================Page Background===================== */
 body {
     margin: 0;
@@ -16,22 +17,26 @@ body {
     background: url(../assets/background/background1.jpeg) no-repeat center center fixed;
     background-size: cover;
 }
-/* ===================Page Set===================== */
+
+/* ===================Section Styles===================== */
 .page-section {
     display: none;
     grid-column: 1 / -1;
     grid-row: 2 / 4;
     width: 100%;
 }
+
 .page-section.is-active {
     display: block;
 }
+
 .menu-page.is-active {
     display: grid;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+
 /* ====================Main Grid Layout==================== */
 .main-layout {
     display: grid;
@@ -39,16 +44,33 @@ body {
     grid-gap: 0;
     width: 100%;
 }
-/* ====================About Grid Layout==================== */
-.about-layout{
+
+/* ====================Page Layout==================== */
+.about-layout {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     grid-template-rows: auto 1fr auto;
     grid-gap: 0;
     width: 100%;
 }
+
+.tools-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
 /* ====================Header Styles==================== */
-.header {    
+.header {
     display: flex;
     margin: 0;
     gap: 0;
@@ -64,11 +86,13 @@ body {
     position: relative;
     z-index: 1000;
 }
+
 /* ====================Header Logo Styles==================== */
 .logo {
     margin-right: auto;
     animation: fadeIn 0.4s ease forwards;
 }
+
 /* ====================Header Button Styles==================== */
 .nav-button {
     display: flex;
@@ -77,10 +101,12 @@ body {
     flex-wrap: wrap;
     justify-content: flex-end;
 }
-.button-container{
+
+.button-container {
     position: relative;
 }
-.button-container button{
+
+.button-container button {
     margin: 3px;
     padding: 10px 20px;
     border: none;
@@ -89,15 +115,27 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.35s ease, box-shadow 0.35s ease, padding-right 0.3s ease;
     position: relative;
-    padding-right: 1.3rem; 
+    padding-right: 1.3rem;
     animation: fadeInUp 0.6s ease var(--delay, 0s) backwards;
 }
-.menu-button{--delay: 0s}
-.tools-button{--delay: 0.2s}
-.about-button{--delay: 0.4s}
-.setting-button{--delay: 0.6s}
 
-.button-container button::after{
+.menu-button {
+    --delay: 0s
+}
+
+.tools-button {
+    --delay: 0.2s
+}
+
+.about-button {
+    --delay: 0.4s
+}
+
+.setting-toggle-button {
+    --delay: 0.6s
+}
+
+.button-container button::after {
     top: 50%;
     transform: translateY(-50%);
     right: 0.8rem;
@@ -107,22 +145,26 @@ body {
     position: absolute;
     transition: right 0.5s ease, opacity 0.3s ease;
 }
-.button-container button:hover::after{
+
+.button-container button:hover::after {
     opacity: 1;
     right: 0.6rem;
 }
-.button-container button:hover{
+
+.button-container button:hover {
     background-color: rgba(243, 243, 243, 0.5);
     transform: scale(1.05) translateY(-3px);
     box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
     padding-right: 2rem;
 }
+
 .button-container .setting-button {
     background-color: rgba(255, 255, 255, 0.5);
     animation: fadeInDown 0.1s ease forwards;
 }
-/* ====================Seeting Card Styles==================== */
-.setting-card{
+
+/* ====================Setting Card Styles==================== */
+.setting-card {
     display: none;
     position: absolute;
     top: 100%;
@@ -136,25 +178,17 @@ body {
     z-index: 1000;
     flex-direction: column;
 }
+
 .setting-card.is-open {
     display: flex;
     animation: fadeInDown 0.25s ease forwards;
 }
+
 .setting-card.is-closing {
     display: flex;
     animation: fadeOutDown 0.25s ease forwards;
 }
-/* ====================Masonry Styles==================== */
-.masonry{
-    column-count: 2;
-    column-gap: 24px;
-        grid-column: 2 / 3;
-}
-.masonry .card{
-    break-inside: avoid;
-    margin-bottom: 24px;
 
-}
 /* ====================Cards Styles==================== */
 .card {
     display: flex;
@@ -164,11 +198,51 @@ body {
     border: 1px solid rgba(255, 244, 244, 0.65);
     border-radius: 24px;
     box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+    position: relative;
+    transition: transform 0.3s ease;
 }
+.card:hover {
+    background-color: rgba(254, 245, 245, 0.8);
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.16);
+}
+/* ====================menu rows Styles==================== */
+.row {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-auto-rows: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+/* ====================Menu display Picture Styles==================== */
+
+.menu-big-picture img {
+    transform: translateY(-20px);
+    object-fit: contain;
+    object-position: center;
+    height: 350px;
+    transition: FadeIn 0.5s ease;
+    mask-image: linear-gradient(to bottom, transparent 0%, black 3%, black 95%, transparent 100%);
+    -webkit-mask-image: linear-gradient(circle at center, black 60%, transparent 95%);
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
+
 /* ====================Welcome Cards Styles==================== */
 .welcome-card {
-    flex-direction: column;
+    grid-column: 1 / 8;
+    grid-row: 1 / 2;
 }
+
+.hello-card {
+    grid-column: 8/ 12;
+    grid-row: 1 / 2;
+}
+
+.music-card {
+    grid-column: 1 / 12;
+}
+
 /* ====================Profile Cards Styles==================== */
 .name-card {
     display: flex;
@@ -181,17 +255,21 @@ body {
     row-gap: 24px;
     column-gap: auto;
 }
-.name-card > div {
+
+.name-card>div {
     border-radius: 24px;
     background-color: rgba(254, 245, 245, 0.6);
-    border: 1px solid rgba(255, 244, 244, 0.65);    
+    border: 1px solid rgba(255, 244, 244, 0.65);
     box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
     text-align: left;
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     backdrop-filter: blur(5px);
 }
-.name, .information, .contact {
+
+.name,
+.information,
+.contact {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -199,9 +277,19 @@ body {
     overflow: hidden;
     animation: fadeInUp 0.6s ease backwards;
 }
-.name-card .name { animation-delay: 0s; }
-.name-card .information { animation-delay: 0.2s; }
-.name-card .contact { animation-delay: 0.4s; }
+
+.name-card .name {
+    animation-delay: 0s;
+}
+
+.name-card .information {
+    animation-delay: 0.2s;
+}
+
+.name-card .contact {
+    animation-delay: 0.4s;
+}
+
 /* ===================Profile Image Styles===================== */
 .name img {
     display: block;
@@ -212,18 +300,22 @@ body {
     object-fit: cover;
     object-position: top center;
 }
+
 /* ===================Profile Content Styles===================== */
 .name-content {
     padding: 16px;
 }
+
 .information-content {
     padding: 16px;
 }
+
 .contact-content {
     padding: 16px;
 }
+
 /* =====================Profile Card Hover Effect=================== */
-.name-card > div::before {
+.name-card>div::before {
     content: '';
     position: absolute;
     bottom: 2px;
@@ -234,14 +326,17 @@ body {
     background: #ffffff;
     transition: width 0.3s ease;
 }
-.name-card > div:hover::before {
+
+.name-card>div:hover::before {
     width: 50%;
 }
-.name-card > div:hover {
+
+.name-card>div:hover {
     background-color: rgba(254, 245, 245, 0.7);
     transform: scale(1.03) translateY(-3px);
     box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
 }
+
 /* =====================Main Cards Layout=================== */
 .main {
     display: flex;
@@ -252,12 +347,13 @@ body {
     grid-row-start: 1;
     grid-row-end: 3;
     flex-direction: row;
-    justify-content:space-between;
+    justify-content: space-between;
     row-gap: 24px;
     column-gap: 24px;
 }
+
 /* ====================Main Cards Styles==================== */
-.main > div {
+.main>div {
     flex: 1 1 300px;
     border-radius: 24px;
     background: rgba(254, 245, 245, 0.5);
@@ -269,22 +365,34 @@ body {
     animation: fadeInUp 0.6s ease var(--delay, 0s) backwards;
 }
 
-.card1{--delay: 0s}
-.card2{--delay: 0.2s}
-.card3{--delay: 0.4s}
-.card4{--delay: 0.6s}
+.card1 {
+    --delay: 0s
+}
 
-.card-content{
+.card2 {
+    --delay: 0.2s
+}
+
+.card3 {
+    --delay: 0.4s
+}
+
+.card4 {
+    --delay: 0.6s
+}
+
+.card-content {
     padding: 24px;
 }
 
-.main > div:hover {
+.main>div:hover {
     background: rgba(254, 245, 245, 0.7);
     transform: scale(1.03) translateY(-3px);
-    box-shadow: 0 20px 50px rgba(15,23, 42, 0.08);
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
 }
+
 /* ===================Footer Styles===================== */
-.footer  {
+.footer {
     grid-column: 1 /-1;
     grid-row-start: 4;
     grid-row-end: 5;
@@ -292,6 +400,7 @@ body {
     padding: 0;
     text-align: center;
 }
+
 /* =====================Responsive Styles=================== */
 @media (max-width: 768px) {
     .about-layout {
@@ -299,72 +408,96 @@ body {
         grid-template-rows: auto auto auto auto;
         width: 100%;
     }
-    .header, .name-card, .main, .footer {
+
+    .header,
+    .name-card,
+    .main,
+    .footer {
         grid-row: auto;
         grid-column: 1 / -1;
     }
+
     .header {
         flex-direction: column;
         align-items: center;
     }
+
     .nav-button {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: flex-end;
     }
+
     .main {
         flex-direction: column;
         align-items: center;
         width: 100%;
     }
-    .main > div {
+
+    .main>div {
         flex-basis: 100%;
         width: 100%;
     }
+
+    .welcome-card,
+    .hello-card,
+    .music-card {
+        grid-column: 1 / -1;
+    }
 }
+
 /* ====================Animation Styles==================== */
 @keyframes fadeInUp {
     from {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
+
 @keyframes fadeIn {
-    from{
+    from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
 }
+
 @keyframes fadeOut {
-    from{
+    from {
         opacity: 1;
     }
+
     to {
         opacity: 0;
     }
 }
-@keyframes fadeInDown{
+
+@keyframes fadeInDown {
     from {
         opacity: 0;
         transform: translateY(-10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
-@keyframes fadeOutDown{
+
+@keyframes fadeOutDown {
     from {
         opacity: 1;
         transform: translateY(0);
     }
+
     to {
         opacity: 0;
         transform: translateY(10px);
