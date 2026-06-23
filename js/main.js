@@ -65,3 +65,11 @@ function steam() {
     window.open("https://steamcommunity.com/profiles/76561198990417401/", "_blank");
 }
 document.querySelector(".steam-link").addEventListener("click", steam);
+function updateTime() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString();
+    const yearString = now.getFullYear();
+    document.getElementById("time").textContent = timeString;
+    document.getElementById("year").textContent = yearString;
+}
+setInterval(updateTime, 1000);
