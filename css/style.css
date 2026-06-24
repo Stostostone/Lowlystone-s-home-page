@@ -674,11 +674,11 @@ body {
         grid-template-rows: auto;
     }
 
-
-
     .menu-big-picture img {
         height: 220px;
         object-fit: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 
     .tools-layout .row {
