@@ -82,7 +82,7 @@ function suggestion() {
     } else if (hour >= 12 && hour < 18) {
         suggestion = "Good afternoon!";
     } else {
-        suggestion = "It's time to go to bad ";
+        suggestion = "It's time to go to bed ";
     }
     document.getElementById("time-suggestion").textContent = suggestion;
 }
